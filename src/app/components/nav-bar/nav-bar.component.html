@@ -1,0 +1,10 @@
+<mat-toolbar>
+    Admin Panel
+    <span class="example-spacer"></span>
+    <span [hidden]="!loggedIn"><button mat-button>View Book List</button></span>
+    <span [hidden]="!loggedIn"><button mat-button>Add New Book</button></span>
+    <span [hidden]="!loggedIn"><button mat-button>Logout</button></span>
+</mat-toolbar>
+
+
+<button mat-raised-button class="mat-warn" color="primary" (click)="toggleDisplay()">Toggle</button>

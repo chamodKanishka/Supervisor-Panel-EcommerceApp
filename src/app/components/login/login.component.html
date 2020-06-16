@@ -1,0 +1,29 @@
+<mat-grid-list cols="3" rowHeight="1:1">
+    <mat-grid-tile></mat-grid-tile>
+    <mat-grid-tile>
+        <div class="example-form">
+            <mat-form-field class="example-full-width">
+                  <mat-label>Username</mat-label>
+                  <input matInput placeholder="Ex. Admin" value="Admin">
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                    <mat-label>Password</mat-label>
+                    <input matInput [type]="!hide ? 'password' : 'text'" placeholder="Ex. ****">
+                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </button>
+                </mat-form-field>
+                <button mat-raised-button color="accent">Login</button>
+            </div>
+    </mat-grid-tile>
+    <mat-grid-tile></mat-grid-tile>
+</mat-grid-list>
+  
+    <!-- <mat-form-field appearance="fill">
+        <mat-label>Enter your password</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'">
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+</mat-form-field> -->
+  

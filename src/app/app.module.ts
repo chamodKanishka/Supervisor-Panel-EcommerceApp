@@ -14,7 +14,6 @@ import {MatIconModule} from '@angular/material/icon';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { LoginComponent } from './components/login/login.component';
 
-
 import { LoginService } from './service/login.service';
 @NgModule({
   declarations: [

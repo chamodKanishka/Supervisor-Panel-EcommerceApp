@@ -1,13 +1,12 @@
 import { Injectable } from '@angular/core';
 // import {Http, Headers} from '@angular/http';
-// import { HttpClientModule } from '@angular/common';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 // import {Observable} from 'rxjs/Observable';
 
 @Injectable()
 export class LoginService {
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private http: HttpClient) { }
 
   sendCredential(username: string, password: string) {
   	let url = "http://localhost:8181/token";
@@ -18,8 +17,28 @@ export class LoginService {
   		'Authorization' : basicHeader
   	});
 
-  	return this.httpClient.get(url, {headers: headers});
+  	return this.http.get(url, {headers: headers});
 
+  }
+
+  checkSession() {
+    let url = "http://localhost:8181/checkSession";
+    
+    let headers = new HttpHeaders ({
+      'x-auth-token' : localStorage.getItem('xAuthToken')
+    });
+
+    return this.http.get(url, {headers: headers});
+  }
+
+  logout() {
+    let url = "http://localhost:8181/user/logout";
+    
+    let headers = new HttpHeaders ({
+      'x-auth-token' : localStorage.getItem('xAuthToken')
+    });
+
+    return this.http.post(url, '', {headers: headers});
   }
 
 }

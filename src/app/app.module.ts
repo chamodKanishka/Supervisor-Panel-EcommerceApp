@@ -15,6 +15,8 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { LoginComponent } from './components/login/login.component';
 
 import { LoginService } from './service/login.service';
+import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +34,12 @@ import { LoginService } from './service/login.service';
     MatGridListModule, 
     MatInputModule,
     MatFormFieldModule,
-    MatIconModule
+    MatIconModule,
+    FormsModule,
+    RouterModule.forRoot([
+      { path:'', component: LoginComponent},
+      { path:'login', component: LoginComponent},
+    ])
   ],
   providers: [
     LoginService

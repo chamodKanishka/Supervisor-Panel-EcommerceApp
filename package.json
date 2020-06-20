@@ -1,5 +1,5 @@
 {
-  "name": "admin-portal",
+  "name": "myapp",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -22,8 +22,8 @@
     "@angular/platform-browser": "~9.1.9",
     "@angular/platform-browser-dynamic": "~9.1.9",
     "@angular/router": "~9.1.9",
-    "rxjs": "~6.5.4",
-    "rxjs-observable": "0.0.7",
+    "rxjs": "^6.5.5",
+    "rxjs-compat": "^6.5.5",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
   },

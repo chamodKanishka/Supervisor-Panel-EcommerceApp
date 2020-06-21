@@ -34,6 +34,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatSelectModule} from '@angular/material/select';
 import {MatListModule} from '@angular/material/list';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -62,6 +63,7 @@ import {MatListModule} from '@angular/material/list';
     MatSlideToggleModule,
     MatSelectModule,
     MatListModule,
+    MatIconModule,
     RouterModule.forRoot([
       { path:'', component: LoginComponent},
       { path:'login', component: LoginComponent},

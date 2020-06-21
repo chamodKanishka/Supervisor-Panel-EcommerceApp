@@ -10,6 +10,7 @@ export class LoginComponent implements OnInit {
 
   public credential = {'username':'', 'password' : ''};
   public loggedIn = false;
+  hide = false;
 
   constructor(public loginService: LoginService) { }
 

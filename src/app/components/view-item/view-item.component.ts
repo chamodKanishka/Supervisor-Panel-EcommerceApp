@@ -1,22 +1,22 @@
 import { Component, OnInit } from '@angular/core';
 import {Params, ActivatedRoute, Router} from '@angular/router';
-import {GetBookService} from '../../services/get-book.service';
-import {Book} from '../../models/book';
+import {GetItemService} from '../../services/get-item.service';
+import {Books} from '../../models/books';
 
 @Component({
   selector: 'app-view-book',
-  templateUrl: './view-book.component.html',
-  styleUrls: ['./view-book.component.css']
+  templateUrl: './view-item.component.html',
+  styleUrls: ['./view-item.component.css']
 })
-export class ViewBookComponent implements OnInit {
+export class ViewItemComponent implements OnInit {
 
-  public book:Book = new Book();
+  public book:Books = new Books();
   public bookId: number;
 
-  constructor(public getBookService:GetBookService,
+  constructor(public getBookService:GetItemService,
   	public route:ActivatedRoute, public router:Router) { }
 
-  onSelect(book:Book) {
+  onSelect(book:Books) {
     this.router.navigate(['/editBook', this.book.id])
     // .then(s => location.reload())
     ;

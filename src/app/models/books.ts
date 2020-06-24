@@ -1,15 +1,15 @@
-export class Book {
+export class Books {
 	public id: number;
 	public title: string;
-	public author: string;
-	public publisher: string;
-	public publicationDate: string;
+	public owner: string;
+	public manufacture: string;
+	public manufacturedDate: string;
 	public language: string;
 	public category: string;
-	public numberOfPages: number;
+	public numberOfSubItems: number;
 	public format: string;
-	public isbn: string;
-	public shippingWeight: number;
+	public sku: string;
+	public weight: number;
 	public listPrice: number;
 	public ourPrice: number;
 	public active: boolean;

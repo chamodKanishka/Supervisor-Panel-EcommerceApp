@@ -18,13 +18,13 @@
 		<mat-grid-tile [colspan]="3" [rowspan]="3">
 			<mat-list>
 				<mat-list-item>
-					<p><strong>Author: </strong>{{book.author}}</p>
+					<p><strong>Author: </strong>{{book.owner}}</p>
 				</mat-list-item>
 				<mat-list-item>
-					<p><strong>Publisher: </strong>{{book.publisher}}</p>
+					<p><strong>Publisher: </strong>{{book.manufacture}}</p>
 				</mat-list-item>
 				<mat-list-item>
-					<p><strong>Publication Date: </strong>{{book.publicationDate}}</p>
+					<p><strong>Publication Date: </strong>{{book.manufacturedDate}}</p>
 				</mat-list-item>
 				<mat-list-item>
 					<p><strong>Language: </strong>{{book.language}}</p>
@@ -33,7 +33,7 @@
 					<p><strong>Category: </strong>{{book.category}}</p>
 				</mat-list-item>
 				<mat-list-item>
-					<p><strong>Pages: </strong>{{book.numberOfPages}}</p>
+					<p><strong>Pages: </strong>{{book.numberOfSubItems}}</p>
 				</mat-list-item>
 			</mat-list>
 		</mat-grid-tile>
@@ -43,10 +43,10 @@
 					<p><strong>Format: </strong>{{book.format}}</p>
 				</mat-list-item>
 				<mat-list-item>
-					<p><strong>ISBN: </strong>{{book.isbn}}</p>
+					<p><strong>ISBN: </strong>{{book.sku}}</p>
 				</mat-list-item>
 				<mat-list-item>
-					<p><strong>Shipping Weight: </strong>{{book.shippingWeight}}</p>
+					<p><strong>Shipping Weight: </strong>{{book.weight}}</p>
 				</mat-list-item>
 				<mat-list-item>
 					<p><strong>List Price: </strong>{{book.listPrice}}</p>

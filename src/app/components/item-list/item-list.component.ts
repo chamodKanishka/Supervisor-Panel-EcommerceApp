@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Book} from '../../models/book';
+import {Books} from '../../models/books';
 import {Router} from '@angular/router';
 import {LoginService} from '../../services/login.service';
 import {GetBookListService} from '../../services/get-book-list.service';
@@ -9,15 +9,15 @@ import {MatDialog, MatDialogRef} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-book-list',
-  templateUrl: './book-list.component.html',
-  styleUrls: ['./book-list.component.css']
+  templateUrl: './item-list.component.html',
+  styleUrls: ['./item-list.component.css']
 })
-export class BookListComponent implements OnInit {
-	public selectedBook : Book;
+export class ItemListComponent implements OnInit {
+	public selectedBook : Books;
 	public checked: boolean;
-	public bookList: Book[];
+	public bookList: Books[];
 	public allChecked: boolean;
-	public removeBookList: Book[] = new Array();
+	public removeBookList: Books[] = new Array();
 
   constructor(
     public getBookListService: GetBookListService,
@@ -26,12 +26,12 @@ export class BookListComponent implements OnInit {
     public dialog:MatDialog
     ) { }
 
-  onSelect(book:Book) {
+  onSelect(book:Books) {
     this.selectedBook=book;
     this.router.navigate(['/viewBook', this.selectedBook.id]);
   }
 
-  openDialog(book:Book) {
+  openDialog(book:Books) {
     let dialogRef = this.dialog.open(DialogResultExampleDialog);
     dialogRef.afterClosed().subscribe(
       result => {
@@ -41,7 +41,7 @@ export class BookListComponent implements OnInit {
             res => {
               console.log(res);
               this.getBookList();
-            }, 
+            },
             err => {
               console.log(err);
             }
@@ -51,7 +51,7 @@ export class BookListComponent implements OnInit {
       );
   }
 
-  updateRemoveBookList(checked:boolean, book:Book) {
+  updateRemoveBookList(checked:boolean, book:Books) {
     if(checked) {
       this.removeBookList.push(book);
     } else {
@@ -79,7 +79,7 @@ export class BookListComponent implements OnInit {
             this.removeBookService.sendBook(book.id).subscribe(
               res => {
 
-              }, 
+              },
               err => {
               }
               );
@@ -87,7 +87,7 @@ export class BookListComponent implements OnInit {
           location.reload();
         }
       }
-      ); 
+      );
   }
 
   getBookList() {
@@ -95,7 +95,7 @@ export class BookListComponent implements OnInit {
       res => {
         console.log(res.json());
         this.bookList=res.json();
-      }, 
+      },
       error => {
         console.log(error);
       }

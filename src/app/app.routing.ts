@@ -1,10 +1,10 @@
 import {ModuleWithProviders} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 import {LoginComponent} from './components/login/login.component';
-import {AddNewBookComponent} from './components/add-new-book/add-new-book.component';
-import {BookListComponent} from './components/book-list/book-list.component';
-import {ViewBookComponent} from './components/view-book/view-book.component';
-import {EditBookComponent} from './components/edit-book/edit-book.component';
+import {AddNewItemComponent} from './components/add-new-item/add-new-item.component';
+import {ItemListComponent} from './components/item-list/item-list.component';
+import {ViewItemComponent} from './components/view-item/view-item.component';
+import {EditItemComponent} from './components/edit-item/edit-item.component';
 
 const appRoutes: Routes = [
 	{
@@ -18,19 +18,19 @@ const appRoutes: Routes = [
 	},
 	{
 		path: 'addNewBook',
-		component: AddNewBookComponent
+		component: AddNewItemComponent
 	},
 	{
 		path: 'bookList',
-		component: BookListComponent
+		component: ItemListComponent
 	},
 	{
 		path: 'viewBook/:id',
-		component: ViewBookComponent
+		component: ViewItemComponent
 	},
 	{
 		path: 'editBook/:id',
-		component: EditBookComponent
+		component: EditItemComponent
 	}
 ];
 

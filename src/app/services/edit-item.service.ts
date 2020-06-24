@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
 import {Http, Headers} from '@angular/http';
-import {Book} from '../models/book';
+import {Books} from '../models/books';
 
 @Injectable()
-export class AddBookService {
+export class EditItemService {
 
   constructor(private http:Http) { }
 
-  sendBook(book:Book) {
-  	let url = "http://localhost:8181/book/add";
+  sendBook(book:Books) {
+  	let url = "http://localhost:8181/book/update";
     
     let headers = new Headers ({
       'Content-Type': 'application/json',
@@ -17,5 +17,4 @@ export class AddBookService {
 
     return this.http.post(url, JSON.stringify(book), {headers: headers});
   }
-
 }

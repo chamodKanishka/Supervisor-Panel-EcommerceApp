@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {Http, Headers} from '@angular/http';
-import {Book} from '../models/book';
+import {Books} from '../models/books';
 
 @Injectable()
 export class RemoveBookService {

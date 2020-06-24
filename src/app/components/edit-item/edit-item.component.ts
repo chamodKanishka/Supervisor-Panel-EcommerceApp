@@ -1,25 +1,25 @@
 import { Component, OnInit } from '@angular/core';
 import { UploadImageService } from '../../services/upload-image.service';
-import { Book } from '../../models/book';
+import { Books } from '../../models/books';
 import { Params, ActivatedRoute, Router } from '@angular/router';
-import { GetBookService } from '../../services/get-book.service';
-import { EditBookService } from '../../services/edit-book.service';
+import { GetItemService } from '../../services/get-item.service';
+import { EditItemService } from '../../services/edit-item.service';
 
 @Component({
   selector: 'app-edit-book',
-  templateUrl: './edit-book.component.html',
-  styleUrls: ['./edit-book.component.css']
+  templateUrl: './edit-item.component.html',
+  styleUrls: ['./edit-item.component.css']
 })
-export class EditBookComponent implements OnInit {
+export class EditItemComponent implements OnInit {
 
   public bookId: number;
-  public book: Book = new Book();
+  public book: Books = new Books();
   public bookUpdated: boolean;
 
   constructor(
   	public uploadImageService: UploadImageService,
-  	public editBookService: EditBookService,
-  	public getBookService: GetBookService,
+  	public editBookService: EditItemService,
+  	public getBookService: GetItemService,
   	public route: ActivatedRoute,
   	public router: Router
   	) { }

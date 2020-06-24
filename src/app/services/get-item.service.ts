@@ -3,7 +3,7 @@ import {Http, Headers} from '@angular/http';
 
 
 @Injectable()
-export class GetBookService {
+export class GetItemService {
 
   constructor(private http:Http) { }
 

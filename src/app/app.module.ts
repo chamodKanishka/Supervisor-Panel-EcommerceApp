@@ -6,20 +6,20 @@ import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 
 import { LoginService } from './services/login.service';
-import { AddBookService } from './services/add-book.service';
+import { AddItemService } from './services/add-item.service';
 import { UploadImageService } from './services/upload-image.service';
 import { GetBookListService } from './services/get-book-list.service';
-import { GetBookService } from './services/get-book.service';
-import { EditBookService } from './services/edit-book.service';
+import { GetItemService } from './services/get-item.service';
+import { EditItemService } from './services/edit-item.service';
 import { RemoveBookService } from './services/remove-book.service';
 
 
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { LoginComponent } from './components/login/login.component';
-import { AddNewBookComponent } from './components/add-new-book/add-new-book.component';
-import { BookListComponent, DialogResultExampleDialog } from './components/book-list/book-list.component';
-import { ViewBookComponent } from './components/view-book/view-book.component';
-import { EditBookComponent } from './components/edit-book/edit-book.component';
+import { AddNewItemComponent } from './components/add-new-item/add-new-item.component';
+import { ItemListComponent, DialogResultExampleDialog } from './components/item-list/item-list.component';
+import { ViewItemComponent } from './components/view-item/view-item.component';
+import { EditItemComponent } from './components/edit-item/edit-item.component';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -41,11 +41,11 @@ import {MatIconModule} from '@angular/material/icon';
     AppComponent,
     NavBarComponent,
     LoginComponent,
-    AddNewBookComponent,
-    BookListComponent,
+    AddNewItemComponent,
+    ItemListComponent,
     DialogResultExampleDialog,
-    ViewBookComponent,
-    EditBookComponent
+    ViewItemComponent,
+    EditItemComponent
   ],
   imports: [
     BrowserModule,
@@ -67,21 +67,21 @@ import {MatIconModule} from '@angular/material/icon';
     RouterModule.forRoot([
       { path:'', component: LoginComponent},
       { path:'login', component: LoginComponent},
-      { path:'addNewBook', component: AddNewBookComponent},
-      { path:'bookList', component: BookListComponent},
-      { path:'viewBook/:id', component: ViewBookComponent},
-      { path:'editBook/:id', component: EditBookComponent},
+      { path:'addNewBook', component: AddNewItemComponent},
+      { path:'bookList', component: ItemListComponent},
+      { path:'viewBook/:id', component: ViewItemComponent},
+      { path:'editBook/:id', component: EditItemComponent},
       
     ])
     
   ],
   providers: [
     LoginService,
-    AddBookService,
+    AddItemService,
     UploadImageService,
     GetBookListService,
-    GetBookService,
-    EditBookService,
+    GetItemService,
+    EditItemService,
     RemoveBookService
   ],
   bootstrap: [AppComponent, DialogResultExampleDialog]

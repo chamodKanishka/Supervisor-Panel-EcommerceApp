@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UploadImageService } from '../../services/upload-image.service';
-import { Books } from '../../models/books';
+import { Items } from '../../models/items';
 import { Params, ActivatedRoute, Router } from '@angular/router';
 import { GetItemService } from '../../services/get-item.service';
 import { EditItemService } from '../../services/edit-item.service';
@@ -13,7 +13,7 @@ import { EditItemService } from '../../services/edit-item.service';
 export class EditItemComponent implements OnInit {
 
   public bookId: number;
-  public book: Books = new Books();
+  public book: Items = new Items();
   public bookUpdated: boolean;
 
   constructor(

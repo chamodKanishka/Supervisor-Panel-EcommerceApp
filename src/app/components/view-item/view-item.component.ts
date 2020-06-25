@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Params, ActivatedRoute, Router} from '@angular/router';
 import {GetItemService} from '../../services/get-item.service';
-import {Books} from '../../models/books';
+import {Items} from '../../models/items';
 
 @Component({
   selector: 'app-view-book',
@@ -10,13 +10,13 @@ import {Books} from '../../models/books';
 })
 export class ViewItemComponent implements OnInit {
 
-  public book:Books = new Books();
+  public book:Items = new Items();
   public bookId: number;
 
   constructor(public getBookService:GetItemService,
   	public route:ActivatedRoute, public router:Router) { }
 
-  onSelect(book:Books) {
+  onSelect(book:Items) {
     this.router.navigate(['/editBook', this.book.id])
     // .then(s => location.reload())
     ;

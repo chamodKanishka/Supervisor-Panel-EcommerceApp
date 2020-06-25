@@ -1,4 +1,4 @@
-export class Books {
+export class Items {
 	public id: number;
 	public title: string;
 	public owner: string;

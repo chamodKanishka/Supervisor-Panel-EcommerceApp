@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Books} from '../../models/books';
+import {Items} from '../../models/items';
 import {Router} from '@angular/router';
 import {LoginService} from '../../services/login.service';
 import {GetBookListService} from '../../services/get-book-list.service';
@@ -13,11 +13,11 @@ import {MatDialog, MatDialogRef} from '@angular/material/dialog';
   styleUrls: ['./item-list.component.css']
 })
 export class ItemListComponent implements OnInit {
-	public selectedBook : Books;
+	public selectedBook : Items;
 	public checked: boolean;
-	public bookList: Books[];
+	public bookList: Items[];
 	public allChecked: boolean;
-	public removeBookList: Books[] = new Array();
+	public removeBookList: Items[] = new Array();
 
   constructor(
     public getBookListService: GetBookListService,
@@ -26,12 +26,12 @@ export class ItemListComponent implements OnInit {
     public dialog:MatDialog
     ) { }
 
-  onSelect(book:Books) {
+  onSelect(book:Items) {
     this.selectedBook=book;
     this.router.navigate(['/viewBook', this.selectedBook.id]);
   }
 
-  openDialog(book:Books) {
+  openDialog(book:Items) {
     let dialogRef = this.dialog.open(DialogResultExampleDialog);
     dialogRef.afterClosed().subscribe(
       result => {
@@ -51,7 +51,7 @@ export class ItemListComponent implements OnInit {
       );
   }
 
-  updateRemoveBookList(checked:boolean, book:Books) {
+  updateRemoveBookList(checked:boolean, book:Items) {
     if(checked) {
       this.removeBookList.push(book);
     } else {

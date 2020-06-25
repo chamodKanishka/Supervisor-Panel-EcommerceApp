@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import {Http, Headers} from '@angular/http';
-import {Books} from '../models/books';
+import {Items} from '../models/items';
 
 @Injectable()
 export class EditItemService {
 
   constructor(private http:Http) { }
 
-  sendBook(book:Books) {
+  sendBook(book:Items) {
   	let url = "http://localhost:8181/book/update";
     
     let headers = new Headers ({

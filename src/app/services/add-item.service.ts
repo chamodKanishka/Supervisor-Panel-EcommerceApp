@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import {Http, Headers} from '@angular/http';
-import {Books} from '../models/books';
+import {Items} from '../models/items';
 
 @Injectable()
 export class AddItemService {
 
   constructor(private http:Http) { }
 
-  sendBook(book:Books) {
+  sendItem(item:Items) {
   	let url = "http://localhost:8181/item/add";
     
     let headers = new Headers ({
@@ -15,7 +15,7 @@ export class AddItemService {
       'x-auth-token' : localStorage.getItem('xAuthToken')
     });
 
-    return this.http.post(url, JSON.stringify(book), {headers: headers});
+    return this.http.post(url, JSON.stringify(item), {headers: headers});
   }
 
 }

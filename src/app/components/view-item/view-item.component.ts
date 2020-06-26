@@ -4,32 +4,32 @@ import {GetItemService} from '../../services/get-item.service';
 import {Items} from '../../models/items';
 
 @Component({
-  selector: 'app-view-book',
+  selector: 'app-view-item',
   templateUrl: './view-item.component.html',
   styleUrls: ['./view-item.component.css']
 })
 export class ViewItemComponent implements OnInit {
 
-  public book:Items = new Items();
-  public bookId: number;
+  public item:Items = new Items();
+  public itemId: number;
 
-  constructor(public getBookService:GetItemService,
+  constructor(public getItemService:GetItemService,
   	public route:ActivatedRoute, public router:Router) { }
 
-  onSelect(book:Items) {
-    this.router.navigate(['/editBook', this.book.id])
+  onSelect(item:Items) {
+    this.router.navigate(['/editItem', this.item.id])
     // .then(s => location.reload())
     ;
   }
 
   ngOnInit() {
   	this.route.params.forEach((params: Params) => {
-  		this.bookId = Number.parseInt(params['id']);
+  		this.itemId = Number.parseInt(params['id']);
   	});
 
-  	this.getBookService.getBook(this.bookId).subscribe(
+  	this.getItemService.getItem(this.itemId).subscribe(
   		res => {
-  			this.book = res.json();
+  			this.item = res.json();
   		},
   		error => {
   			console.log(error);

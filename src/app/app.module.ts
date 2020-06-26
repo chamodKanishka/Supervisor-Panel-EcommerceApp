@@ -67,10 +67,10 @@ import {MatIconModule} from '@angular/material/icon';
     RouterModule.forRoot([
       { path:'', component: LoginComponent},
       { path:'login', component: LoginComponent},
-      { path:'addNewBook', component: AddNewItemComponent},
-      { path:'bookList', component: ItemListComponent},
-      { path:'viewBook/:id', component: ViewItemComponent},
-      { path:'editBook/:id', component: EditItemComponent},
+      { path:'addNewItem', component: AddNewItemComponent},
+      { path:'itemList', component: ItemListComponent},
+      { path:'viewItem/:id', component: ViewItemComponent},
+      { path:'editItem/:id', component: EditItemComponent},
       
     ])
     

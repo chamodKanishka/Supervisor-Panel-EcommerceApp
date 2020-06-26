@@ -6,29 +6,29 @@ import { GetItemService } from '../../services/get-item.service';
 import { EditItemService } from '../../services/edit-item.service';
 
 @Component({
-  selector: 'app-edit-book',
+  selector: 'app-edit-item',
   templateUrl: './edit-item.component.html',
   styleUrls: ['./edit-item.component.css']
 })
 export class EditItemComponent implements OnInit {
 
-  public bookId: number;
-  public book: Items = new Items();
-  public bookUpdated: boolean;
+  public itemId: number;
+  public item: Items = new Items();
+  public itemUpdated: boolean;
 
   constructor(
   	public uploadImageService: UploadImageService,
-  	public editBookService: EditItemService,
-  	public getBookService: GetItemService,
+  	public editItemService: EditItemService,
+  	public getItemService: GetItemService,
   	public route: ActivatedRoute,
   	public router: Router
   	) { }
 
   onSubmit() {
-  	this.editBookService.sendBook(this.book).subscribe(
+  	this.editItemService.sendItem(this.item).subscribe(
   		data => {
   			this.uploadImageService.modify(JSON.parse(JSON.parse(JSON.stringify(data))._body).id);
-  			this.bookUpdated=true;
+  			this.itemUpdated=true;
   		},
   		error => console.log(error)
   	);
@@ -36,12 +36,12 @@ export class EditItemComponent implements OnInit {
 
   ngOnInit() {
   	this.route.params.forEach((params: Params) => {
-  		this.bookId = Number.parseInt(params['id']);
+  		this.itemId = Number.parseInt(params['id']);
   	});
 
-  	this.getBookService.getBook(this.bookId).subscribe(
+  	this.getItemService.getItem(this.itemId).subscribe(
   		res => {
-  			this.book = res.json();
+  			this.item = res.json();
   		}, 
   		error => console.log(error)
   	)

@@ -11,7 +11,12 @@
 					<th>Category</th>
 					<th>List Price</th>
 					<th>Our Price</th>
-					<th>Active?</th>
+					<th>Weight</th>
+          <th>Stock</th>
+          <th>MF</th>
+          <th>MFD</th>
+          <th>Sub Items</th>
+          <th>Active?</th>
 					<th>Operation</th>
 				</tr>
 			</thead>
@@ -26,7 +31,12 @@
 					<td>{{item.category}}</td>
 					<td>{{item.listPrice}}</td>
 					<td>{{item.ourPrice}}</td>
-					<td>{{item.active}}</td>
+					<td>{{item.weight}}</td>
+          <td>{{item.inStockNumber}}</td>
+          <td>{{item.manufacture}}</td>
+          <td>{{item.manufacturedDate}}</td>
+          <td>{{item.numberOfSubItems}}</td>
+          <td>{{item.active}}</td>
 					<td>
 						<input hidden="hidden" name="id" />
 						<button mat-button (click)="openDialog(item)" value="delete"><span class="fa fa-times"></span> delete</button>

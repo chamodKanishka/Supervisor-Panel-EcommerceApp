@@ -1,8 +1,8 @@
 <mat-toolbar class="mat-primary">
 	<h3 [style.color]="'white'">SUPERVISOR PANEL</h3>
 	<span class="example-spacer"></span>
-	<span [hidden]="!loggedIn"><a mat-button routerLink="/bookList">View Item List</a></span>
-	<span [hidden]="!loggedIn"><a mat-button routerLink="/addNewBook">Add a Item</a></span>
+	<span [hidden]="!loggedIn"><a mat-button routerLink="/itemList">View Item List</a></span>
+	<span [hidden]="!loggedIn"><a mat-button routerLink="/addNewItem">Add a Item</a></span>
 	<span [hidden]="!loggedIn"><a mat-button (click)="logout()">Logout</a></span>
 </mat-toolbar>
 

@@ -35,6 +35,7 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatSelectModule} from '@angular/material/select';
 import {MatListModule} from '@angular/material/list';
 import {MatIconModule} from '@angular/material/icon';
+import {MatDatepickerModule} from '@angular/material/datepicker';
 
 @NgModule({
   declarations: [
@@ -64,6 +65,7 @@ import {MatIconModule} from '@angular/material/icon';
     MatSelectModule,
     MatListModule,
     MatIconModule,
+    MatDatepickerModule,
     RouterModule.forRoot([
       { path:'', component: LoginComponent},
       { path:'login', component: LoginComponent},

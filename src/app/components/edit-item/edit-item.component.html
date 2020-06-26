@@ -14,12 +14,12 @@
 			<mat-grid-list cols="4" rowHeight="60px">
 				<mat-grid-tile [colspan]="2" [rowspan]="1">
 					<mat-form-field>
-						<input matInput id="author" type="text" required [(ngModel)]="item.owner" name="author" placeholder="Author">
+						<input matInput id="owner" type="text" required [(ngModel)]="item.owner" name="owner" placeholder="Owner">
 					</mat-form-field>
 				</mat-grid-tile>
 				<mat-grid-tile [colspan]="2" [rowspan]="1">
 					<mat-form-field>
-						<input matInput id="publisher" type="text" required [(ngModel)]="item.manufacture" name="publisher" placeholder="Publisher">
+						<input matInput id="manufacture" type="text" required [(ngModel)]="item.manufacture" name="manufacture" placeholder="Manufacture">
 					</mat-form-field>
 				</mat-grid-tile>
 			</mat-grid-list>
@@ -27,7 +27,7 @@
 			<mat-grid-list cols="4" rowHeight="60px">
 				<mat-grid-tile [colspan]="4" [rowspan]="1">
 					<mat-form-field>
-						<input matInput id="publicationDate" type="date" required [(ngModel)]="item.manufacturedDate" name="publicationDate" placeholder="PublicationDate">
+						<input matInput id="manufactureDate" type="date" required [(ngModel)]="item.manufacturedDate" name="manufacturedDate" placeholder="Manufactured Date">
 					</mat-form-field>
 				</mat-grid-tile>
 			</mat-grid-list>
@@ -35,15 +35,14 @@
 			<mat-grid-list cols="4" rowHeight="60px">
 				<mat-grid-tile [colspan]="2" [rowspan]="1">
 					<mat-select placeholder="Category" id="category" name="category" [(ngModel)]="item.category">
-						<mat-option value="Management">Management</mat-option>
-						<mat-option value="Fiction">Fiction</mat-option>
-						<mat-option value="Engineering">Engineering</mat-option>
-						<mat-option value="Programming">Programming</mat-option>
-						<mat-option value="Arts &amp; Literature">Arts &amp; Literature</mat-option>
+						<mat-option value="Management">Cloths</mat-option>
+						<mat-option value="Fiction">Electric item</mat-option>
+						<mat-option value="Engineering">Furniture</mat-option>
+						<mat-option value="Programming">Cosmetic</mat-option>
 					</mat-select>
 				</mat-grid-tile>
 				<mat-grid-tile [colspan]="2" [rowspan]="1">
-					<mat-select placeholder="Format" id="format" name="format" [(ngModel)]="item.format">
+					<mat-select placeholder="Cover" id="cover" name="Cover" [(ngModel)]="item.format">
 						<mat-option value="paperback">Paperback</mat-option>
 						<mat-option value="hardcover">Hardcover</mat-option>
 					</mat-select>
@@ -53,12 +52,12 @@
 			<mat-grid-list cols="4" rowHeight="60px">
 				<mat-grid-tile [colspan]="2" [rowspan]="1">
 					<mat-form-field>
-						<input matInput id="pageNumber" type="number" [(ngModel)]="item.numberOfSubItems" name="numberOfPages" step="1" placeholder="Number of Pages">
+						<input matInput id="pageNumber" type="number" [(ngModel)]="item.numberOfSubItems" name="numberOfPages" step="1" placeholder="Number of Sub-Items">
 					</mat-form-field>
 				</mat-grid-tile>
 				<mat-grid-tile [colspan]="2" [rowspan]="1">
 					<mat-form-field>
-						<input matInput id="isbn" type="text" required [(ngModel)]="item.sku" name="isbn" placeholder="ISBN">
+						<input matInput id="sku" type="text" required [(ngModel)]="item.sku" name="sku" placeholder="SKU">
 					</mat-form-field>
 				</mat-grid-tile>
 			</mat-grid-list>
@@ -79,14 +78,8 @@
 			<mat-grid-list cols="4" rowHeight="60px">
 				<mat-grid-tile [colspan]="2" [rowspan]="1">
 					<mat-form-field>
-						<input matInput id="shippingWeight" type="number" [(ngModel)]="item.weight" name="shippingWeight" step="0.01" placeholder="Shipping Weight">
-					</mat-form-field>&nbsp;ounces&nbsp;
-				</mat-grid-tile>
-				<mat-grid-tile [colspan]="2" [rowspan]="1">
-					<mat-select placeholder="Language" id="language" name="language" [(ngModel)]="item.language">
-						<mat-option value="english">English</mat-option>
-						<mat-option value="spanish">Spanish</mat-option>
-					</mat-select>
+						<input matInput id="weight" type="number" [(ngModel)]="item.weight" name="weight" step="0.5" placeholder="Weight">
+					</mat-form-field>kg
 				</mat-grid-tile>
 			</mat-grid-list>
 

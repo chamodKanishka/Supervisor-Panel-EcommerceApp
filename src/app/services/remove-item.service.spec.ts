@@ -1,15 +1,15 @@
 import { TestBed, inject } from '@angular/core/testing';
 
-import { RemoveBookService } from './remove-book.service';
+import { RemoveItemService } from './remove-item.service';
 
-describe('RemoveBookService', () => {
+describe('RemoveItemService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [RemoveBookService]
+      providers: [RemoveItemService]
     });
   });
 
-  it('should ...', inject([RemoveBookService], (service: RemoveBookService) => {
+  it('should ...', inject([RemoveItemService], (service: RemoveItemService) => {
     expect(service).toBeTruthy();
   }));
 });

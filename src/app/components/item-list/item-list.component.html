@@ -1,6 +1,6 @@
 <div class="container">
 	<div class="table-responsive" style="margin-top: 30px;">
-		<table id="bookListTable" class="table bordered highlight">
+		<table id="itemListTable" class="table bordered highlight">
 			<thead>
 				<tr>
 					<th>
@@ -16,24 +16,24 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr *ngFor = "let book of bookList">
+				<tr *ngFor = "let item of bookList">
 					<td>
 						<input hidden="hidden" name="id" />
-						<input type="checkbox" [checked]="allChecked" (change)="updateRemoveBookList($event.target.checked, book)" />
+						<input type="checkbox" [checked]="allChecked" (change)="updateRemoveItemList($event.target.checked, item)" />
 					</td>
-					<td><a (click)="onSelect(book)" style="cursor:pointer">{{book.title}}</a></td>
-					<td>{{book.owner}}</td>
-					<td>{{book.category}}</td>
-					<td>{{book.listPrice}}</td>
-					<td>{{book.ourPrice}}</td>
-					<td>{{book.active}}</td>
+					<td><a (click)="onSelect(item)" style="cursor:pointer">{{item.title}}</a></td>
+					<td>{{item.owner}}</td>
+					<td>{{item.category}}</td>
+					<td>{{item.listPrice}}</td>
+					<td>{{item.ourPrice}}</td>
+					<td>{{item.active}}</td>
 					<td>
 						<input hidden="hidden" name="id" />
-						<button mat-button (click)="openDialog(book)" value="delete"><span class="fa fa-times"></span> delete</button>
+						<button mat-button (click)="openDialog(item)" value="delete"><span class="fa fa-times"></span> delete</button>
 					</td>
 				</tr>
 			</tbody>
 		</table>
 	</div>
-	<button mat-raised-button class="mat-warn" id="deleteSelected" (click)="removeSelectedBooks()">Delete Selected</button>
+	<button mat-raised-button class="mat-warn" id="deleteSelected" (click)="removeSelectedItems()">Delete Selected</button>
 </div>

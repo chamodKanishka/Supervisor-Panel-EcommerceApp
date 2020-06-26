@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {Items} from '../../models/items';
 import {Router} from '@angular/router';
 import {LoginService} from '../../services/login.service';
-import {GetBookListService} from '../../services/get-book-list.service';
-import {RemoveBookService} from '../../services/remove-book.service';
+import {GetItemListService} from '../../services/get-item-list.service';
+import {RemoveItemService} from '../../services/remove-item.service';
 
 import {MatDialog, MatDialogRef} from '@angular/material/dialog';
 
@@ -13,22 +13,22 @@ import {MatDialog, MatDialogRef} from '@angular/material/dialog';
   styleUrls: ['./item-list.component.css']
 })
 export class ItemListComponent implements OnInit {
-	public selectedBook : Items;
+	public selectedItem : Items;
 	public checked: boolean;
 	public bookList: Items[];
 	public allChecked: boolean;
-	public removeBookList: Items[] = new Array();
+	public removeItemList: Items[] = new Array();
 
   constructor(
-    public getBookListService: GetBookListService,
-    public removeBookService: RemoveBookService,
+    public getItemListService: GetItemListService,
+    public removeItemService: RemoveItemService,
     public router:Router,
     public dialog:MatDialog
     ) { }
 
   onSelect(book:Items) {
-    this.selectedBook=book;
-    this.router.navigate(['/viewBook', this.selectedBook.id]);
+    this.selectedItem=book;
+    this.router.navigate(['/viewItem', this.selectedItem.id]);
   }
 
   openDialog(book:Items) {
@@ -37,7 +37,7 @@ export class ItemListComponent implements OnInit {
       result => {
         console.log(result);
         if(result=="yes") {
-          this.removeBookService.sendBook(book.id).subscribe(
+          this.removeItemService.sendItem(book.id).subscribe(
             res => {
               console.log(res);
               this.getBookList();
@@ -51,32 +51,32 @@ export class ItemListComponent implements OnInit {
       );
   }
 
-  updateRemoveBookList(checked:boolean, book:Items) {
+  updateRemoveItemList(checked:boolean, book:Items) {
     if(checked) {
-      this.removeBookList.push(book);
+      this.removeItemList.push(book);
     } else {
-      this.removeBookList.splice(this.removeBookList.indexOf(book), 1);
+      this.removeItemList.splice(this.removeItemList.indexOf(book), 1);
     }
   }
 
   updateSelected(checked: boolean) {
     if(checked) {
       this.allChecked = true;
-      this.removeBookList=this.bookList.slice();
+      this.removeItemList=this.bookList.slice();
     } else {
       this.allChecked=false;
-      this.removeBookList=[];
+      this.removeItemList=[];
     }
   }
 
-  removeSelectedBooks() {
+  removeSelectedItems() {
     let dialogRef = this.dialog.open(DialogResultExampleDialog);
     dialogRef.afterClosed().subscribe(
       result => {
         console.log(result);
         if(result=="yes") {
-          for (let book of this.removeBookList) {
-            this.removeBookService.sendBook(book.id).subscribe(
+          for (let book of this.removeItemList) {
+            this.removeItemService.sendItem(book.id).subscribe(
               res => {
 
               },
@@ -91,7 +91,7 @@ export class ItemListComponent implements OnInit {
   }
 
   getBookList() {
-    this.getBookListService.getBookList().subscribe(
+    this.getItemListService.getItemList().subscribe(
       res => {
         console.log(res.json());
         this.bookList=res.json();

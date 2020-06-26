@@ -8,10 +8,10 @@ import { RouterModule } from '@angular/router';
 import { LoginService } from './services/login.service';
 import { AddItemService } from './services/add-item.service';
 import { UploadImageService } from './services/upload-image.service';
-import { GetBookListService } from './services/get-book-list.service';
+import { GetItemListService } from './services/get-item-list.service';
 import { GetItemService } from './services/get-item.service';
 import { EditItemService } from './services/edit-item.service';
-import { RemoveBookService } from './services/remove-book.service';
+import { RemoveItemService } from './services/remove-item.service';
 
 
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
@@ -79,10 +79,10 @@ import {MatIconModule} from '@angular/material/icon';
     LoginService,
     AddItemService,
     UploadImageService,
-    GetBookListService,
+    GetItemListService,
     GetItemService,
     EditItemService,
-    RemoveBookService
+    RemoveItemService
   ],
   bootstrap: [AppComponent, DialogResultExampleDialog]
 })

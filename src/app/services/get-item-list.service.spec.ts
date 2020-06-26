@@ -1,15 +1,15 @@
 import { TestBed, inject } from '@angular/core/testing';
 
-import { GetBookListService } from './get-book-list.service';
+import { GetItemListService } from './get-item-list.service';
 
-describe('GetBookListService', () => {
+describe('GetItemListService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [GetBookListService]
+      providers: [GetItemListService]
     });
   });
 
-  it('should ...', inject([GetBookListService], (service: GetBookListService) => {
+  it('should ...', inject([GetItemListService], (service: GetItemListService) => {
     expect(service).toBeTruthy();
   }));
 });

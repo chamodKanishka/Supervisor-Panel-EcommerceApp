@@ -8,7 +8,7 @@ import {RemoveItemService} from '../../services/remove-item.service';
 import {MatDialog, MatDialogRef} from '@angular/material/dialog';
 
 @Component({
-  selector: 'app-book-list',
+  selector: 'app-item-list',
   templateUrl: './item-list.component.html',
   styleUrls: ['./item-list.component.css']
 })
@@ -26,21 +26,21 @@ export class ItemListComponent implements OnInit {
     public dialog:MatDialog
     ) { }
 
-  onSelect(book:Items) {
-    this.selectedItem=book;
+  onSelect(item:Items) {
+    this.selectedItem=item;
     this.router.navigate(['/viewItem', this.selectedItem.id]);
   }
 
-  openDialog(book:Items) {
+  openDialog(item:Items) {
     let dialogRef = this.dialog.open(DialogResultExampleDialog);
     dialogRef.afterClosed().subscribe(
       result => {
         console.log(result);
         if(result=="yes") {
-          this.removeItemService.sendItem(book.id).subscribe(
+          this.removeItemService.sendItem(item.id).subscribe(
             res => {
               console.log(res);
-              this.getBookList();
+              this.getItemList();
             },
             err => {
               console.log(err);
@@ -51,11 +51,11 @@ export class ItemListComponent implements OnInit {
       );
   }
 
-  updateRemoveItemList(checked:boolean, book:Items) {
+  updateRemoveItemList(checked:boolean, item:Items) {
     if(checked) {
-      this.removeItemList.push(book);
+      this.removeItemList.push(item);
     } else {
-      this.removeItemList.splice(this.removeItemList.indexOf(book), 1);
+      this.removeItemList.splice(this.removeItemList.indexOf(item), 1);
     }
   }
 
@@ -75,8 +75,8 @@ export class ItemListComponent implements OnInit {
       result => {
         console.log(result);
         if(result=="yes") {
-          for (let book of this.removeItemList) {
-            this.removeItemService.sendItem(book.id).subscribe(
+          for (let item of this.removeItemList) {
+            this.removeItemService.sendItem(item.id).subscribe(
               res => {
 
               },
@@ -90,7 +90,7 @@ export class ItemListComponent implements OnInit {
       );
   }
 
-  getBookList() {
+  getItemList() {
     this.getItemListService.getItemList().subscribe(
       res => {
         console.log(res.json());
@@ -103,7 +103,7 @@ export class ItemListComponent implements OnInit {
   }
 
   ngOnInit() {
-  	this.getBookList();
+  	this.getItemList();
   }
 
 }

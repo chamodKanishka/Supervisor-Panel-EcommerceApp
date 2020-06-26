@@ -9,18 +9,18 @@ export class UploadImageService {
   	this.filesToUpload = [];
   }
 
-  upload(bookId: number) {
-  	this.makeFileRequest("http://localhost:8181/book/add/image?id="+bookId, [], this.filesToUpload).then((result) => {
+  upload(itemId: number) {
+  	this.makeFileRequest("http://localhost:8181/item/add/image?id="+itemId, [], this.filesToUpload).then((result) => {
   		console.log(result);
   	}, (error) => {
   		console.log(error);
   	});
   }
 
-  modify(bookId: number) {
+  modify(itemId: number) {
     console.log(this.filesToUpload);
     if (this.filesToUpload.length>0) {
-      this.makeFileRequest("http://localhost:8181/book/update/image?id="+bookId, [], this.filesToUpload).then((result) => {
+      this.makeFileRequest("http://localhost:8181/item/update/image?id="+itemId, [], this.filesToUpload).then((result) => {
       console.log(result);
     }, (error) => {
       console.log(error);
